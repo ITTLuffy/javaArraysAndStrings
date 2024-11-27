@@ -1,4 +1,4 @@
-# javaProjects
+# JavaProjects
 
 Netbeans project in remote version <br>
 In this part of the year we're learning how to use arrays and strings. <br>
