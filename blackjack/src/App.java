@@ -109,7 +109,6 @@ public class App {
                     System.out.println("Non hai più soldi");
                     sentinella = false;
                     sentinella2 = false;
-                    n = 2; // per uscire dalla condizione
                     System.out.println("Il banco ha guadagnato " + sFBanco);
                 }
 
