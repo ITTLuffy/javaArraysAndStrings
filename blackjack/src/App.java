@@ -19,6 +19,13 @@ public class App {
         System.out.println("Premi 1 per iniziare :)");
         int inizio = in.nextInt();
 
+        if (inizio == 1) {
+            System.out.println("Iniziamo a giocare");
+        } else {
+            System.out.println("Non hai premuto 1, il gioco non può iniziare");
+            System.exit(0);
+        }
+
         int soldi = 1000;
         System.out.println("I soldi a tua disposizione sono: " + soldi);
         // somma per vedere se abbiamo vinto o perso (GIOCATORE)
@@ -46,7 +53,7 @@ public class App {
         // soldi x banco
         int soldiBanco, sommaSoldiBanco = 0;
         
-        int sFBanco = 0;
+        int sFBanco;
 
         
         // soldi
@@ -91,7 +98,8 @@ public class App {
                 System.out.println("I soldi a tua disposizione sono: " + soldi);
                 
                 // banco
-                System.out.println("Soldi spesi dal banco: " + sommaSoldiBanco);
+                sFBanco = sommaSoldiBanco + soldi;
+                System.out.println("Soldi spesi dal banco: " + sFBanco);
                 soldiBanco = r.nextInt(1, 401);
                 sommaSoldiBanco += soldiBanco;
                 System.out.println("Puntata banco: " + soldiBanco);
@@ -101,7 +109,8 @@ public class App {
                     System.out.println("Non hai più soldi");
                     sentinella = false;
                     sentinella2 = false;
-                    n = 2;
+                    n = 2; // per uscire dalla condizione
+                    System.out.println("Il banco ha guadagnato " + sFBanco);
                 }
 
                 // inseriamo un altro numero casuale
@@ -158,25 +167,25 @@ public class App {
                 System.out.println("Hai perso, il banco ha vinto!!!");
                 System.out.println("Ti rimangono " + soldi + " soldi");
                 sFBanco = soldiBanco + soldi;
-                System.out.println("Il banco ha");
+                System.out.println("Il banco ha " + sFBanco + " soldi");
                 System.out.println("Torna subito a casa, non spendere soldi inutilmente");
             } else if (somma == 21) {
                 System.out.println("Hai vinto, complimenti!!!");
-                soldi = 1000;
+                soldi = 1000 + soldiBanco;
                 System.out.println("Ti rimangono " + soldi + " soldi");
                 System.out.println("Ora che hai riavuto i tuoi soldi, pensa bene alla prossima mossa; non sprecarli");
             }
 
             if (somma > sommaBanco) {
                 System.out.println("Hai vinto, complimenti!!!");
-                soldi = 1000;
+                soldi = 1000 + soldiBanco;
                 System.out.println("Ti rimangono " + soldi + " soldi");
                 System.out.println("Ora che hai riavuto i tuoi soldi, pensa bene alla prossima mossa; non sprecarli");
             } 
             
             if (sommaBanco > 21) {
                 System.out.println("Hai vinto, complimenti!!!");
-                soldi = 1000;
+                soldi = 1000 + soldiBanco;
                 System.out.println("Ti rimangono " + soldi + " soldi");
                 System.out.println("Ora che hai riavuto i tuoi soldi, pensa bene alla prossima mossa; non sprecarli");
 
