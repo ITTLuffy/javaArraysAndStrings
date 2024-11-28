@@ -9,5 +9,5 @@ Sorted an array, using the equality of to cells <br>
 Also seeing if two string are polindrome, which means they can be read in the opposite verse.
 
 ## Blackjack
-Trying to replicate the famous game blackjack, without becoming gambling addict :)
-Using new feat: System.exti(0); this is used to stop the process.
+Trying to replicate the famous game blackjack, without becoming gambling addict :) <br>
+Using new feat: ```System.exit(0)```; this is used to stop the process.
