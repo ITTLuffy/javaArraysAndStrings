@@ -52,8 +52,6 @@ public class App {
         
         // soldi x banco
         int soldiBanco, sommaSoldiBanco = 0;
-        
-        int sFBanco;
 
         
         // soldi
@@ -98,8 +96,7 @@ public class App {
                 System.out.println("I soldi a tua disposizione sono: " + soldi);
                 
                 // banco
-                sFBanco = sommaSoldiBanco + soldi;
-                System.out.println("Soldi spesi dal banco: " + sFBanco);
+                System.out.println("Soldi spesi dal banco: " + sommaSoldiBanco);
                 soldiBanco = r.nextInt(1, 401);
                 sommaSoldiBanco += soldiBanco;
                 System.out.println("Puntata banco: " + soldiBanco);
@@ -109,7 +106,7 @@ public class App {
                     System.out.println("Non hai più soldi");
                     sentinella = false;
                     sentinella2 = false;
-                    System.out.println("Il banco ha guadagnato " + sFBanco);
+                    System.out.println("Il banco ha guadagnato " + sommaSoldiBanco);
                 }
 
                 // inseriamo un altro numero casuale
@@ -127,8 +124,8 @@ public class App {
                 if (somma > 21) {
                     System.out.println("Hai perso!!");
                     System.out.println("Il banco ha guadagnato " + soldi);
-                    sFBanco = sommaSoldiBanco + soldi;
-                    System.out.println("Il banco ora ha: " + sFBanco);
+                    sommaSoldiBanco += soldi;
+                    System.out.println("Il banco ora ha: " + sommaSoldiBanco);
 
                     System.out.println("Hai " + soldi + " soldi");
                     System.out.println("Non sprecarli");
@@ -165,26 +162,25 @@ public class App {
             if (somma == 21 && sommaBanco == 21) {
                 System.out.println("Hai perso, il banco ha vinto!!!");
                 System.out.println("Ti rimangono " + soldi + " soldi");
-                sFBanco = soldiBanco + soldi;
-                System.out.println("Il banco ha " + sFBanco + " soldi");
+                System.out.println("Il banco ha " + sommaSoldiBanco + " soldi");
                 System.out.println("Torna subito a casa, non spendere soldi inutilmente");
             } else if (somma == 21) {
                 System.out.println("Hai vinto, complimenti!!!");
-                soldi = 1000 + soldiBanco;
+                soldi = 1000 + sommaSoldiBanco;
                 System.out.println("Ti rimangono " + soldi + " soldi");
                 System.out.println("Ora che hai riavuto i tuoi soldi, pensa bene alla prossima mossa; non sprecarli");
             }
 
             if (somma > sommaBanco) {
                 System.out.println("Hai vinto, complimenti!!!");
-                soldi = 1000 + soldiBanco;
+                soldi = 1000 + sommaSoldiBanco;
                 System.out.println("Ti rimangono " + soldi + " soldi");
                 System.out.println("Ora che hai riavuto i tuoi soldi, pensa bene alla prossima mossa; non sprecarli");
             } 
             
             if (sommaBanco > 21) {
                 System.out.println("Hai vinto, complimenti!!!");
-                soldi = 1000 + soldiBanco;
+                soldi = 1000 + sommaSoldiBanco;
                 System.out.println("Ti rimangono " + soldi + " soldi");
                 System.out.println("Ora che hai riavuto i tuoi soldi, pensa bene alla prossima mossa; non sprecarli");
 
@@ -202,6 +198,16 @@ public class App {
                 System.out.println("Ti rimangono " + soldi + " soldi");
                 System.out.println("Torna subito a casa, non spendere soldi inutilmente");               
             } 
+
+            if (sommaBanco == 21 && somma < 21) {
+                System.out.println("Hai perso, il banco ha vinto!!!");
+                System.out.println("Ti rimangono " + soldi + " soldi");
+                sommaSoldiBanco += soldi;
+                System.out.println("Il banco ha " + sommaSoldiBanco + " soldi");
+                System.out.println("Torna subito a casa, non spendere soldi inutilmente");
+            }
+
+
         }
 
         in.close();
