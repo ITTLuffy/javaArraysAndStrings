@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
@@ -24,9 +23,19 @@ public class App {
             h -= 2;
         }
 
-        System.out.println("        ***");
-        System.out.println("       *****");
 
+        int altezzaTronco = ((n / 2) + 2)/3; // calcolo l'altezza del tronco
+        for (int i = 0; i < altezzaTronco; i++) {
+            for (int j = 0; j < (n / 2)-1; j++) {
+                System.out.print(stringa);
+            }
+            for (int j = 0; j < 3; j++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+
+        
 
         // VERSIONE CON ARRAY
         /*
