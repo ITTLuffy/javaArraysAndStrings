@@ -25,17 +25,23 @@ public class App {
 
 
         int altezzaTronco = ((n / 2) + 2)/3; // calcolo l'altezza del tronco
+        int larghezzaTronco = n / 3; // calcolo la larghezza del tronco
+        int spazi = larghezzaTronco; // variabile per gli spazi
+
+        
         for (int i = 0; i < altezzaTronco; i++) {
-            for (int j = 0; j < (n / 2)-1; j++) {
+            for (int j = spazi; j > 0; j--) {
                 System.out.print(stringa);
             }
-            for (int j = 0; j < 3; j++) {
+            for (int j = 0; j < larghezzaTronco; j++) {
                 System.out.print("*");
             }
             System.out.println("");
+            larghezzaTronco+=2;
+            spazi--;
         }
-
         
+   
 
         // VERSIONE CON ARRAY
         /*
